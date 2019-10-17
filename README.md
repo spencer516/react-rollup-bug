@@ -1,10 +1,16 @@
-This is a simple template for building a React app with Rollup. Do this...
+### React DOM + Rollup Treehsaking
 
-```bash
-git clone https://gist.github.com/Rich-Harris/cb14f4bc0670c47d00d191565be36bf0 react-rollup
-cd react-rollup
-npm install
-npm run dev
+To see this bug in action:
+
+1. Clone this repo
+2. Install dependencies with `yarn install` or `npm install`
+3. Run `yarn start:treeshake`
+4. Visit `localhost:10001`
+
+If the react app (defined in `main.jsx`) is rendering correclty, you should see: "Hello, World!" inside of an `<h1>` tag
+
+This is "fixed" by disabling treeshaking, which you can do:
+
+```sh
+yarn start:notreeshake
 ```
-
-...then open index.html to see the Hello World application. `npm run build` will build the app with React in production mode, and minify the result.
