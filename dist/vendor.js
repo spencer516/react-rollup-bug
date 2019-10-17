@@ -5551,85 +5551,11 @@
     a: {
       for (var b = a.return; null !== b; ) {
         if (Ji(b)) {
-          var c = b;
           break a;
         }
         b = b.return;
       }
       throw t$1(Error(160));
-    }
-    b = c.stateNode;
-    switch (c.tag) {
-      case 5:
-        var d = !1;
-        break;
-      case 3:
-        b = b.containerInfo;
-        d = !0;
-        break;
-      case 4:
-        b = b.containerInfo;
-        d = !0;
-        break;
-      default:
-        throw t$1(Error(161));
-    }
-    c.effectTag & 16 && (Tb(b, ""), (c.effectTag &= -17));
-    a: b: for (c = a; ; ) {
-      for (; null === c.sibling; ) {
-        if (null === c.return || Ji(c.return)) {
-          c = null;
-          break a;
-        }
-        c = c.return;
-      }
-      c.sibling.return = c.return;
-      for (c = c.sibling; 5 !== c.tag && 6 !== c.tag && 18 !== c.tag; ) {
-        if (c.effectTag & E$1) continue b;
-        if (null === c.child || 4 === c.tag) continue b;
-        else (c.child.return = c), (c = c.child);
-      }
-      if (!(c.effectTag & E$1)) {
-        c = c.stateNode;
-        break a;
-      }
-    }
-    for (var e = a; ; ) {
-      var f = 5 === e.tag || 6 === e.tag;
-      if (f) {
-        var g = f ? e.stateNode : e.stateNode.instance;
-        if (c)
-          if (d) {
-            f = b;
-            var h = g;
-            g = c;
-            8 === f.nodeType
-              ? f.parentNode.insertBefore(h, g)
-              : f.insertBefore(h, g);
-          } else b.insertBefore(g, c);
-        else
-          d
-            ? ((h = b),
-              8 === h.nodeType
-                ? ((f = h.parentNode), f.insertBefore(g, h))
-                : ((f = h), f.appendChild(g)),
-              (h = h._reactRootContainer),
-              (null !== h && void 0 !== h) ||
-                null !== f.onclick ||
-                (f.onclick = Td))
-            : b.appendChild(g);
-      } else if (4 !== e.tag && null !== e.child) {
-        e.child.return = e;
-        e = e.child;
-        continue;
-      }
-      if (e === a) break;
-      for (; null === e.sibling; ) {
-        if (null === e.return || e.return === a) return;
-        e = e.return;
-      }
-      e.sibling.return = e.return;
-      e = e.sibling;
     }
   }
   function Hi(a, b, c) {
@@ -7900,14 +7826,6 @@
         } while (null !== h);
         throw t$1(Error(171));
       }
-      if (1 === c.tag) {
-        var k = c.type;
-        if (N$1(k)) {
-          c = Af(c, k, h);
-          break a;
-        }
-      }
-      c = h;
     } else c = tf;
     null === b.context ? (b.context = c) : (b.pendingContext = c);
     b = f;
